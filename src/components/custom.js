@@ -22,5 +22,10 @@
             o('.navbar-brand>img').attr('src','images/logo2.png');
         }
     };
-    a(), o(window).scroll(a);
+    var getFullYear = function() {
+        var dt = new Date();
+        o('#copyright-txt').html('All copyrights reserved &copy; '+dt.getFullYear()+' - ExperienceFlow');
+    };
+
+    a(), o(window).scroll(a), getFullYear();
 }(jQuery);

@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="experienceFlow">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, maximum-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="favicon.ico" rel='shortcut icon' type='image/x-icon' />
+    <!--<link id="canonicalUrl" rel="canonical" href="" />-->
+    <title>ExperienceFlow</title>
+    <style>
+        .graph {
+            margin: 150px auto 0;
+            border-left: 4px solid #333;
+            border-bottom: 4px solid #333;
+            width: 45%;
+            min-height: 500px;
+            position: relative;
+        }
+        .graph::before, .graph::after {
+            position: absolute;
+            width: 0;
+            height: 0;
+            z-index: -1;
+            content: '';
+        }
+        .graph::before {
+            top: -15px;
+            left: -12px;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 20px solid #333333;
+        }
+        .graph::after {
+            bottom: -12px;
+            right: -14px;
+            border-bottom: 10px solid transparent;
+            border-top: 10px solid transparent;
+            border-left: 20px solid #333333;
+        }
+        .x-axis-text {
+            font-size: 16px;
+            transform: rotate(270deg);
+            position: absolute;
+            left: -140px;
+            bottom: 140px;
+        }
+        .y-axis-text {
+            font-size: 14px;
+            position: absolute;
+            left: 0;
+            bottom: -65px;
+            display: block;
+            list-style-type: none;
+            width: 100%;
+            padding: 0;
+            font-weight: 600;
+            vertical-align: text-top;
+        }
+        .y-axis-text li{
+            display: inline-block;
+            width: 24%;
+            vertical-align: text-top;
+            text-align: left;
+        }
+        .bars {
+            width: 100%;
+            position: absolute;
+            bottom: 50px;
+        }
+        .bar {
+            height: 100px;
+            width: 0%;
+            margin: 30px 0;
+            vertical-align: middle;
+            font-size: 20px;
+            color: #fff;
+            font-weight: 600;
+            padding-top: 24px;
+            white-space: nowrap;
+            line-height: 30px;
+            transition: all;
+            position: relative;
+        }
+        .bar:before {
+            content: '';
+            background: #ddd;
+            width: 100%;
+            height: 100px;
+            display: block;
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .bars .bar:first-of-type {
+            background: #388c0b;
+        }
+        .bars .bar:nth-child(2) {
+            background: #4ec012;
+        }
+        .bars .bar:last-of-type {
+            margin-bottom: 0px;
+            background: #5fe408;
+        }
+        .bars .bar img{
+            width: 50px;
+            height: 50px;
+            margin-right: 20px;
+            margin-left: 5%;
+        }
+        .flag-text {
+            width: 210px;
+            margin-left: auto;
+            margin-right: 10px;
+            display: flex;
+            overflow: hidden;
+        }
+        .flag-text h4 {
+            text-align: right;
+            font-weight: 600;
+            font-size: 16px;
+            display: inline-flex;
+            transition: all .4s linear;
+            right: -260px;
+            position: relative;
+            z-index: -1;
+        }
+        .flag-text img {
+            display: inline-flex;
+            margin-left: 15px;
+            transition: all;
+            height: 0px;
+        }
+        .moving-line svg {
+            position: absolute;
+            overflow: hidden;
+            vertical-align: middle;
+            z-index: 999;
+        }
+        .moving-line .ball {
+            position: absolute;
+            left: -10px;
+            bottom: -10px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50px;
+            background: #444;
+        }
+        .moving-line svg.mk path{
+            animation:offset 4s linear forwards;
+            stroke-dasharray: 200;
+            stroke-dashoffset: 200;
+        }
+
+        @keyframes offset {
+            0%   {stroke-dashoffset: 200}
+            25%   {stroke-dashoffset: 150}
+            50%   {stroke-dashoffset: 100}
+            75%   {stroke-dashoffset: 50}
+            100%   {stroke-dashoffset: 0}
+        }
+        @keyframes move {
+            100% {
+                offset-distance: 100%; /* New */
+            }
+        }
+
+    </style>
+</head>
+<body id="page-top">
+<!-- Navigation -->
+
+<div class="graph">
+    <h4 class="x-axis-text">EBITDA Improvement (15-20%)</h4>
+    <div class="y-axis-text">
+        <ul>
+            <li>Compliance</li>
+            <li>Productivity</li>
+            <li>Resource Capacity</li>
+            <li>Experience <small>(Customer/vendor/Partner)</small></li>
+        </ul>
+    </div>
+
+    <div class="bars">
+        <div class="bar">
+            <img src="images/server.svg" width="32" height="32" > Loream Ipsum Dollar Sit
+        </div>
+        <div class="bar">
+            <img src="images/solution.svg" width="32" height="32" >Loream Ipsum Dollar Sit
+        </div>
+        <div class="bar">
+            <img src="images/bars.svg" width="32" height="32" >Loream Ipsum Dollar Sit
+        </div>
+    </div>
+    <div class="flag-text">
+        <h4>Autonomus EBITDA Improvement</h4>
+        <span class="flag-icon"><img src="images/flag.svg" width="32" height="32" alt="Flag"> </span>
+    </div>
+    <div class="moving-line">
+        <!--<div class="ball"></div>-->
+        <svg width="100%" height="100%" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <defs>
+                <marker id="arrowhead" viewBox="0 0 10 10" refX="7" refY="5" markerUnits="strokeWidth" markerWidth="4" markerHeight="3" orient="auto">
+                    <path d="M 0 0 L 10 5 L 0 10 z" stroke="none" fill="#444444"/>
+                </marker>
+            </defs>
+            <path marker-end="url(#arrowhead)" fill="transparent" stroke-linejoin="round" stroke="#444444" stroke-width="1" d="M0,91 Q77,80 95,3" class="path"></path>
+        </svg>
+    </div>
+</div>
+
+<svg>
+    <defs>
+        <marker id="arrowhead" viewBox="0 0 10 10" refX="7" refY="5" markerUnits="strokeWidth" markerWidth="4" markerHeight="3" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" stroke="none" fill="#444444"/>
+        </marker>
+    </defs>
+    <path fill="none"
+          marker-end="url(#arrowhead)"
+          stroke="#333333"
+          stroke-width="3"
+          d="M0,91 Q77,80 95,3" />
+</svg>
+
+<button class="clickme">click me</button>
+
+<script src="main.js"></script>
+
+<script>
+    (function($) {
+        var a = function () {
+            $('svg').removeClass('mk');
+            $(".bars .bar").css('width','0%');
+            $('.flag-text .flag-icon img').css('height','0');
+            $('.flag-text h4').css('right','-260px');
+
+            setTimeout(function (){
+                $('svg').removeClass('mk').addClass('mk');
+            },0);
+
+            $(".bars .bar").eq(2).animate({
+                'width' : '99%'
+            }, 1000, function () {
+                $(".bars .bar").eq(1).animate({
+                    'width' : '99%'
+                }, 1000, function () {
+                    $(".bars .bar").eq(0).animate({
+                        'width' : '99%'
+                    }, 1000, function () {
+                        $('.flag-text .flag-icon img').animate({
+                            'height': '32px'
+                        },200, function () {
+                            $('.flag-text h4').animate({
+                                'right': '0px'
+                            },300);
+                        });
+                    });
+                });
+            });
+        }
+        a();
+        $('.clickme').on('click', function () {
+            a();
+        });
+
+    })($);
+</script>
+</body>
+</html>

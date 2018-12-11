@@ -6336,7 +6336,7 @@ img::-moz-selection {
   #mainNav .navbar-toggler {
     font-size: 12px;
     right: 0;
-    padding: 13px;
+    padding: 10px;
     color: #fff;
     border: 0; }
     #mainNav .navbar-toggler:focus {
@@ -6353,7 +6353,7 @@ img::-moz-selection {
     font-size: 100%;
     font-weight: 600;
     padding: .75em 0;
-    color: #ced4da;
+    color: #f8f9fa;
     display: block; }
     @media (min-width: 992px) {
       #mainNav .navbar-nav .nav-item .nav-link {
@@ -6398,7 +6398,7 @@ header.masthead {
     position: relative;
     height: 600px;
     overflow: hidden;
-    background: url(/images/banner.jpg) center center no-repeat;
+    background: url(images/banner.jpg) center center no-repeat;
     -o-object-fit: cover;
     object-fit: cover;
     background-size: cover; }
@@ -6430,7 +6430,9 @@ header.masthead {
         top: 200px; } }
     @media (min-width: 992px) {
       header.masthead .container > div {
-        width: 50%; } }
+        width: 40%; }
+        header.masthead .container > div h1 {
+          line-height: 55px; } }
     header.masthead .container .intro-text h1 {
       text-shadow: 0 0 20px black;
       width: -webkit-fit-content;
@@ -6492,18 +6494,25 @@ section {
       text-transform: none; }
     section .team-member p {
       margin-top: 0px; }
+  section#team .row:last-of-type .team-member {
+    margin-bottom: 0px; }
   section .bg-contact {
-    background-image: url(/images/contact-bg.jpg);
+    background-image: url(images/contact-bg.jpg);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom; }
   section .contact-details {
     font-size: 10px;
     font-weight: 600; }
-    section .contact-details img {
-      margin: 0 0px 0 5px; }
-      section .contact-details img + span:first-of-type {
-        letter-spacing: 1px; }
+    section .contact-details p {
+      display: inline-block; }
+      @media (min-width: 992px) {
+        section .contact-details p {
+          display: inline; } }
+      section .contact-details p img {
+        margin: 0 0px 0 5px; }
+        section .contact-details p img + span:first-of-type {
+          letter-spacing: 1px; }
   section .city img {
     width: 125px;
     height: 125px;
@@ -6543,4 +6552,21 @@ footer {
     @media (min-width: 992px) {
       footer .copyright {
         text-align: right; } }
+
+.ebitda-txt {
+  font-size: 2.2rem;
+  margin-bottom: 30px; }
+  @media (min-width: 992px) {
+    .ebitda-txt {
+      font-size: 2.5rem;
+      padding-top: 3rem;
+      margin-bottom: 0px; } }
+  .ebitda-txt strong {
+    font-weight: 900;
+    font-size: 130%;
+    display: block; }
+  .ebitda-txt .green {
+    color: #02c102;
+    font-size: 150%;
+    letter-spacing: 1px; }
 

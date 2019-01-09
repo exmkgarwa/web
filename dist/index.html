@@ -55,8 +55,7 @@
         <div class="container">
             <div class="text-left intro-text text-white">
                 <h1 class="fadeInDown animated">Digital Nervous System For Your Business</h1>
-                <a href="https://experienceflow.us9.list-manage.com/subscribe/post?u=00d8f1994fdd2b1ca22d4743a&amp;id=a6dcfc7712"
-                   class="btn btn-primary fadeInUp animated">REQUEST FOR DEMO</a>
+                <a data-toggle="modal" data-target="#contactUsModal" href="javascript:void(0);" class="btn btn-primary fadeInUp animated">REQUEST FOR DEMO</a>
             </div>
         </div>
     </div>
@@ -70,7 +69,7 @@
             <div class="col-lg-12 text-center">
                 <h2 class="section-heading text-center text-uppercase fadeIn animated">Platform</h2>
                 <hr class="lines zoomIn animated"/>
-                <h3 class="section-subheading fadeIn animated">Next-Generation AI/ML based 3-Tier operations technology stack for augmenting decisions & actions of every role in the organization</h3>
+                <h3 class="section-subheading fadeIn animated">Next-Generation AI/ML-based 3-Tier Operations Technology Stack for augmenting decisions & actions of every role in the organization</h3>
             </div>
         </div>
 
@@ -98,28 +97,34 @@
         </div>
 
         <div class="row text-center item-box">
-            <div class="col-md-4">
+            <div class="col-md-4 mb-4">
                 <div class="icon">
                   <img src="images/bars.svg" width="42" height="38" alt="Graph Icon" />
                 </div>
                 <h4 class="service-heading">15-20% EBITDA (Revenue, Cost, & Compliance) Improvement</h4>
-                <p class="text-muted">Proactively address opportunities and risks in real-time associated with customer demand, resource management, employee management, and compliance penalties that impact top-line and bottom-line of the business.</p>
+                <p class="text-muted">
+                    Proactively address opportunities and risks in real-time associated with customer demand, resource management, employee management, and compliance penalties that impact top-line and bottom-line of the business.
+                </p>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-4 mb-4">
                 <div class="icon">
                     <img src="images/server.svg" width="42" height="38" alt="Gear Icon" />
                 </div>
                 <h4 class="service-heading">Real-Time Process Control at Micro-Level</h4>
-                <p class="text-muted">Force multiply business organization to meet operations goals at the micro-level of every customer, every resource, every employee and every compliance.</p>
+                <p class="text-muted">
+                    Force multiply business organization with situation-aware bots to meet design, delivery, and training goals of every business process associated with each customer, each resource, each employee, and each compliance.
+                </p>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-4 mb-4">
                 <div class="icon">
                     <img src="images/solution.svg" width="42" height="38" alt="puzzle Icon" />
                 </div>
-                <h4 class="service-heading">Easy & Quick to Deploy (2-4 Weeks)</h4>
-                <p class="text-muted">The solution can be deployed quickly & takes minimum integration time with the in-house systems - Systems of Records, Systems of Engagement, Systems of Insights, IoT Systems, etc.</p>
+                <h4 class="service-heading">Easy & Quick to Deploy; Measurable Results in 4 weeks</h4>
+                <p class="text-muted">
+                    Solution takes minimum integration time with the in-house systems (Systems of Records, Systems of Engagement, Systems of Insights, IoT Systems, etc.) and provides before and after metrics to validate each area of improvement.
+                </p>
             </div>
         </div>
     </div>
@@ -241,23 +246,23 @@
                         <h4>Boston</h4>
                     </div>
                     <div class="col-6 col-sm-3 city">
+                        <img src="images/city/atlanta.jpg" class="mx-auto rounded-circle" alt="Atlanta" />
+                        <h4>Atlanta</h4>
+                    </div>
+                    <div class="col-6 col-sm-3 city">
+                        <img src="images/city/halifax.jpg" class="mx-auto rounded-circle" alt="Halifax" />
+                        <h4>Halifax</h4>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 col-sm-3 city">
                         <img src="images/city/singapore.jpg" class="mx-auto rounded-circle" alt="Singapore" />
                         <h4>Singapore</h4>
                     </div>
                     <div class="col-6 col-sm-3 city">
                         <img src="images/city/kualalumpur.jpg" class="mx-auto rounded-circle" alt="Kuala Lumpur" />
                         <h4>Kuala Lumpur</h4>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-6 col-sm-3 city">
-                        <img src="images/city/halifax.jpg" class="mx-auto rounded-circle" alt="Halifax" />
-                        <h4>Halifax</h4>
-                    </div>
-                    <div class="col-6 col-sm-3 city">
-                        <img src="images/city/atlanta.jpg" class="mx-auto rounded-circle" alt="Atlanta" />
-                        <h4>Atlanta</h4>
                     </div>
                     <div class="col-6 col-sm-3 city">
                         <img src="images/city/bangalore.jpg" class="mx-auto rounded-circle" alt="Bangalore" />
@@ -292,6 +297,63 @@
     </div>
 </footer>
 
+
+<!-- Modal -->
+<div class="modal fade" id="contactUsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">ExperienceFlow Demo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="subscribeForm" action="sendMail/post.php" method="POST">
+                    <div class="form-group">
+                        <label for="MERGE0">Email address</label>
+                        <input autocomplete="off" type="email" class="form-control" id="MERGE0" name="MERGE0" aria-describedby="emailHelp" placeholder="Enter email address">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="MERGE1">First Name</label>
+                        <input autocomplete="off" type="text" class="form-control" name="MERGE1" id="MERGE1" aria-describedby="firstNameHelp" placeholder="Enter first name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="MERGE2">Last Name</label>
+                        <input autocomplete="off" type="text" class="form-control" name="MERGE2" id="MERGE2" aria-describedby="lastNameHelp" placeholder="Enter last name">
+                    </div>
+                    <div class="form-group">
+                        <label for="MERGE4">Phone Number</label>
+                        <input autocomplete="off" type="text" class="form-control" name="MERGE4" id="MERGE4" aria-describedby="phoneNumberHelp" placeholder="Enter phone number">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="form-group mr-auto">
+                    <button class="btn btn-primary" id="subscribeSubmit">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="messageModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="messageModalLongTitle">ExperienceFlow Demo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="updateMessage"></p>
+            </div>
+        </div>
+    </div>
+</div>
 <script src="./main.js"></script>
 <script type="text/javascript">function add_chatinline(){var hccid=45788405;var nt=document.createElement("script");nt.async=true;nt.src="https://mylivechat.com/chatinline.aspx?hccid="+hccid;var ct=document.getElementsByTagName("script")[0];ct.parentNode.insertBefore(nt,ct);}
 add_chatinline(); </script>

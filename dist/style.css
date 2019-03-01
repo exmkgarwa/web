@@ -6876,7 +6876,7 @@ header.masthead {
     position: relative;
     height: 600px;
     overflow: hidden;
-    background: url(images/banner.jpg) center center no-repeat;
+    background: url(/images/banner.jpg) center center no-repeat;
     -o-object-fit: cover;
     object-fit: cover;
     background-size: cover; }
@@ -6988,7 +6988,7 @@ section {
   section#team .row:last-of-type .team-member {
     margin-bottom: 0px; }
   section .bg-contact {
-    background-image: url(images/contact-bg.jpg);
+    background-image: url(/images/contact-bg.jpg);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom; }

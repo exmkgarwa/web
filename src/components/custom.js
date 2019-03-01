@@ -29,34 +29,44 @@
 
     a(), o(window).scroll(a), getFullYear();
 
-    // support@experienceflow.com
-    // rohit.nagpal@experienceflow.com
-    var submitForm = function (form) {
+    var submitForm = function (form,data) {
 
         o.ajax({
-            data: $(form).serialize(),
-            type: 'POST',
-            url: $(form).attr('action'),
+            "data":data,
+            "url": $(form).attr('action'),
+            "async": true,
+            "crossDomain": true,
+            "method": "POST",
+            contentType: 'application/json',
             dataType: 'json',
+            "headers": {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            "processData": false,
+
             success: function (response) {
-                $('#contactUsModal').modal('hide');
-                if(response.status && response.status === 'OK') {
-                    $('#messageModal').modal('show');
-                    $('#messageModal').find('p.updateMessage').html('Thank you for filling out the form. We have received your request for a demo and will reach out to you shortly!');
-                } else {
-                    $('#messageModal').modal('show');
+                if(response && response.code) {
                     $('#messageModal').find('p.updateMessage').html('We are currently facing technical difficulties due to which we could not register your request. Please try again later. We apologize for the inconvenience caused.');
+                } else {
+                    $('#messageModal').find('p.updateMessage').html('Thank you for filling out the form. We have received your request for a demo and will reach out to you shortly!');
                 }
             },
             error: function () {
                 $('#contactUsModal').modal('hide');
                 $('#messageModal').find('p.updateMessage').html('We are currently facing technical difficulties due to which we could not register your request. Please try again later. We apologize for the inconvenience caused.');
+            },
+            complete: function (response) {
+                $('#contactUsModal').modal('hide');
+                $('#messageModal').modal('show');
+                o('#subscribeSubmit').removeClass('disabled');
             }
         })
     };
 
     o('#subscribeSubmit:not(.disabled)').on('click', function (e) {
         e.preventDefault();
+        $(this).addClass('disabled');
         var phoneRegex = /-?(\d+|\d+\.\d+|\.\d+)([eE][-+]?\d+)?/;
         var emailRegex = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
         var isValidForm = true;
@@ -64,26 +74,33 @@
         $('#subscribeForm').find('.form-group').removeClass('has-error');
 
         $('#subscribeForm').find('input:not([type=hidden])').each(function () {
-            if ($(this).attr('id') === 'MERGE0' && !emailRegex.test($(this).val())) {
+            if ($(this).attr('id') === 'email' && !emailRegex.test($(this).val())) {
                 $(this).closest('.form-group').addClass('has-error');
                 isValidForm = false;
             }
 
-            if (($(this).attr('id') === 'MERGE0' || $(this).attr('id') === 'MERGE1' || $(this).attr('id') === 'MERGE2')) {
+            if (($(this).attr('id') === 'email' || $(this).attr('id') === 'firstName' || $(this).attr('id') === 'lastName')) {
                 if($.trim($(this).val()) == '') {
                     $(this).closest('.form-group').addClass('has-error');
                     isValidForm = false;
                 }
             }
 
-            if ($(this).attr('id') === 'MERGE4' && !phoneRegex.test($(this).val())) {
+            if ($(this).attr('id') === 'phone' && !phoneRegex.test($(this).val())) {
                 $(this).closest('.form-group').addClass('has-error');
                 isValidForm = false;
             }
         });
 
         if(isValidForm) {
-            submitForm('#subscribeForm');
+            var data = {
+                "email": $('#subscribeForm').find('input#email').val(),
+                "firstName": $('#subscribeForm').find('input#firstName').val(),
+                "lastName": $('#subscribeForm').find('input#lastName').val(),
+                "phone": $('#subscribeForm').find('input#phone').val()
+            };
+            submitForm('#subscribeForm', JSON.stringify(data));
+            return;
         }
     });
 }(jQuery);

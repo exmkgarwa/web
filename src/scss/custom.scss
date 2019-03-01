@@ -276,11 +276,31 @@ header {
       .intro-text {
         h1 {
           text-shadow: 0 0 20px rgba(0,0,0,1);
-          //margin-bottom: 25px;
 
           width: fit-content;
           margin: 20px auto 25px auto;
         }
+        .share-btn {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          height: 18px;
+
+          &:hover {
+            text-decoration: none;
+            color: $gray-400;
+
+            img {
+              opacity: .7;
+            }
+          }
+
+          img {
+            margin-right: 2px;
+            margin-top: -3px;
+          }
+        }
+
         .video-subheading {
           span{
             background: rgba(0,0,0,.4);
@@ -296,7 +316,7 @@ section {
   padding: 70px 0;
 
   @media (min-width: 768px) {
-    padding: 75px 0;
+    padding: 100px 0;
   }
 
   .lines {
